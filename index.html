@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch Statement Intro</title>
+</head>
+<body>
+Month (1-12): <input type="number" id="month">
+<input type="button" id="run" value="Check"/>
+<p id="message"></p>
+
+<script>
+    document.getElementById('run').addEventListener('click', run);
+
+    function run() {
+        let month = document.getElementById('month').value;
+        switch (month) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                message = 'Tháng ' + month + ' có 31 ngày';
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                message = 'Tháng ' + month + ' có 30 ngày';
+                break;
+            case '2':
+                message = 'Tháng ' + month + ' có 29 hoặc 30 ngày';
+                break;
+            default:
+                message = month + ' không phải là một tháng trong năm';
+                break;
+
+        }
+
+        document.getElementById('message').innerHTML = message;
+    }
+
+</script>
+</body>
+</html>
